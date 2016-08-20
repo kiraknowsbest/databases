@@ -41,14 +41,14 @@ var insertMessage = function (params, resEnd) {
     if (err) {
       db.connection.query('insert into usernames (username) values (?)', [params[0]], function(err, results) {
         if (err) {
-          console.error('ERROR===================',err);
+          console.error('ERROR===================', err);
         } else {
           console.log('added user ', [params[0]]);
           userKey = results.insertId;
         }
       });
     } else {
-      console.log('RESULTS================',results);
+      console.log('RESULTS================', results);
     }
   });
     // if error
